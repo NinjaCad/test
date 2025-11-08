@@ -1,290 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Caedmon Julian — Portfolio</title>
-  <meta name="description" content="Simple personal portfolio for Caedmon Julian: projects, skills, education and contact." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caedmon Julian | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root{
-      --bg:#f7f7fb;
-      --panel:#ffffff;
-      --muted:#6b7280;
-      --accent:#2563eb;
-      --glass: rgba(255,255,255,0.6);
-      --radius:12px;
-      --shadow: 0 6px 20px rgba(2,6,23,0.08);
-      color-scheme: light;
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      scroll-behavior: smooth;
     }
-    [data-theme='dark']{
-      --bg:#0b1020;
-      --panel:#0f1724;
-      --muted:#9ca3af;
-      --accent:#60a5fa;
-      --glass: rgba(255,255,255,0.03);
-      --shadow: 0 8px 30px rgba(2,6,23,0.6);
-      color-scheme: dark;
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,var(--bg),#ffffff);}
-    .container{max-width:1000px;margin:36px auto;padding:24px}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:var(--shadow)}
-    h1{margin:0;font-size:20px}
-    nav{display:flex;gap:12px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600}
-    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:var(--shadow);border:none}
-    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    header h1 {font-size: 1.5rem; font-weight: 700; letter-spacing: 1px;}
 
-    /* Main card */
-    .card{background:var(--panel);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero{display:flex;gap:18px;align-items:center}
-    .hero .intro{flex:1}
-    .lead{font-size:18px;margin:6px 0 12px}
-    p{color:var(--muted);margin:8px 0}
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-    /* Projects */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,var(--glass),transparent);cursor:pointer;border:1px solid rgba(0,0,0,0.04)}
-    .project h4{margin:0 0 6px}
-    .tags{display:flex;gap:6px;flex-wrap:wrap}
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,0.04)}
+    nav a:hover {color: #4da6ff;}
 
-    /* Right column */
-    .side{display:flex;flex-direction:column;gap:12px}
-    .skill{display:flex;flex-direction:column;gap:6px}
-    .bar{height:10px;background:linear-gradient(90deg,#dbeafe,#bfdbfe);border-radius:999px;overflow:hidden}
-    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed)}
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 20px 60px 20px;
+      text-align: center;
+    }
 
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #4da6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
 
-    /* Contact form */
-    form{display:flex;flex-direction:column;gap:8px}
-    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;color:inherit}
-    textarea{min-height:100px}
-    .row{display:flex;gap:8px}
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      background: url('images/background.jpg') center/cover no-repeat fixed;
+    }
 
-    /* Modal */
-    .modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(2,6,23,0.4);opacity:0;pointer-events:none;transition:opacity .18s}
-    .modal.open{opacity:1;pointer-events:auto}
-    .modal-card{width:min(720px,96%);background:var(--panel);padding:18px;border-radius:14px;box-shadow:var(--shadow)}
+    .intro h1 {font-size: 3rem; margin-bottom: 0.5rem;}
+    .intro p {font-size: 1.2rem; color: #ccc;}
 
-    /* Responsive */
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.avatar{width:48px;height:48px}.side{order:2}}
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem auto;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .flex{display:flex;align-items:center;gap:8px}
-    .center{display:flex;align-items:center;justify-content:center}
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
 
-    /* subtle focus for accessibility */
-    a:focus,input:focus,button:focus,textarea:focus{outline:3px solid rgba(37,99,235,0.18);outline-offset:2px}
+    .project img {
+      width: 120px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #4da6ff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .project a:hover {text-decoration: underline;}
+
+    .contact-info p {margin: 10px 0;}
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    .reveal {opacity: 0; transform: translateY(30px); transition: all 0.8s ease;}
+    .reveal.active {opacity: 1; transform: translateY(0);}
+
+    @media (max-width: 600px) {
+      nav a {margin-left: 0.8rem; font-size: 0.9rem;}
+      .intro h1 {font-size: 2.2rem;}
+    }
   </style>
 </head>
-<body data-theme="light">
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="avatar">CJ</div>
-        <div>
-          <h1>Caedmon Julian</h1>
-          <div class="muted">Student • Designer • Writer</div>
-        </div>
-      </div>
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" class="btn" aria-pressed="false">Dark</button>
-      </nav>
-    </header>
+<body>
+  <header>
+    <h1>Caedmon Julian</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <main class="grid">
-      <section>
-        <div class="card hero">
-          <div class="intro">
-            <h2 class="lead">Hi — I’m Caedmon. I build digital posters, work on theater tech, and write summaries of books I love.</h2>
-            <p>I’m a Hart High student graduating in 2026. I enjoy design, storytelling, and learning new technical skills. Below are highlights of my coursework, projects, and skills.</p>
-            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-              <a href="#projects" class="btn">See projects</a>
-              <a href="mailto:caedmon.julian@example.com" class="btn" style="background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12);box-shadow:none">Email me</a>
-            </div>
-          </div>
-          <div style="width:160px;text-align:right">
-            <div class="card" style="background:linear-gradient(180deg,rgba(96,165,250,0.08),transparent);padding:12px">
-              <strong>Education</strong>
-              <p class="muted" style="margin:6px 0 0">Hart High School<br/>Expected Graduation: 2026<br/>GPA: 3.8</p>
-            </div>
-          </div>
-        </div>
+  <section class="intro" id="home">
+    <h1>Caedmon Julian</h1>
+    <p>Computer Science Student | Developer | Creator</p>
+  </section>
 
-        <div id="projects" class="card" style="margin-top:16px">
-          <h3>Projects</h3>
-          <div class="projects" id="projectsGrid">
-            <article class="project" tabindex="0" data-title="Digital Design Portfolio" data-desc="Series of digital posters focusing on typography, layout, and color theory. Tools: Photoshop, Canva." data-link="#">
-              <h4>Digital Design Portfolio</h4>
-              <p class="muted">Posters, typography experiments, branding mockups.</p>
-              <div class="tags"><span class="tag">Photoshop</span><span class="tag">Canva</span></div>
-            </article>
-
-            <article class="project" tabindex="0" data-title="Theater Tech Crew" data-desc="Lighting and sound design for school productions. Hands-on experience with cueing, rigs, and team coordination." data-link="#">
-              <h4>Theater Tech Crew</h4>
-              <p class="muted">Backstage lighting & sound for school plays.</p>
-              <div class="tags"><span class="tag">Lighting</span><span class="tag">Sound</span></div>
-            </article>
-
-            <article class="project" tabindex="0" data-title="Book Summaries" data-desc="Summaries of John Piper's 'Don't Waste Your Life' to deepen comprehension and improve academic writing." data-link="#">
-              <h4>Writing: Book Summaries</h4>
-              <p class="muted">Academic summaries and analysis.</p>
-              <div class="tags"><span class="tag">Writing</span><span class="tag">Analysis</span></div>
-            </article>
-
-            <article class="project" tabindex="0" data-title="Community Volunteer" data-desc="Helped set up community events — logistics, staging, and on-site coordination." data-link="#">
-              <h4>Community Volunteer</h4>
-              <p class="muted">Event setup & volunteer coordination.</p>
-              <div class="tags"><span class="tag">Volunteer</span></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h3>Achievements</h3>
-          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
-            <li>3rd Place — School Writing Competition (2024)</li>
-            <li>Volunteer, Local Community Event Setup</li>
-            <li>Perfect Attendance Award</li>
-          </ul>
-        </div>
-      </section>
-
-      <aside class="side">
-        <div class="card">
-          <h3>Skills</h3>
-          <div class="skill">
-            <label class="muted">Graphic Design</label>
-            <div class="bar"><i style="width:85%"></i></div>
-          </div>
-          <div class="skill">
-            <label class="muted">Writing & Editing</label>
-            <div class="bar"><i style="width:80%"></i></div>
-          </div>
-          <div class="skill">
-            <label class="muted">Public Speaking</label>
-            <div class="bar"><i style="width:70%"></i></div>
-          </div>
-          <div class="skill">
-            <label class="muted">Theater Tech</label>
-            <div class="bar"><i style="width:75%"></i></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Contact</h3>
-          <p class="muted">Email: <a href="mailto:caedmon.julian@example.com">caedmon.julian@example.com</a></p>
-          <p class="muted">Location: Santa Clarita, CA</p>
-
-          <form id="contactForm" onsubmit="return handleSubmit(event)">
-            <input id="name" name="name" placeholder="Your name" required />
-            <input id="email" name="email" type="email" placeholder="Your email" required />
-            <textarea id="message" name="message" placeholder="Message" required></textarea>
-            <button class="btn" type="submit">Send</button>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3>Quick Info</h3>
-          <p class="muted">Relevant courses: English Honors, Graphic Design, Computer Science, Theater Tech</p>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <small class="muted">© Caedmon Julian — Created with ❤️ • Save this file as <code>index.html</code> and open in your browser.</small>
-    </footer>
-  </div>
-
-  <!-- Modal for project details -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card" role="document">
-      <button id="closeModal" style="float:right;border:none;background:transparent;font-weight:700;cursor:pointer">✕</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDesc" class="muted"></p>
-      <div style="margin-top:12px;text-align:right">
-        <a id="modalLink" class="btn" href="#">Open</a>
-      </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card project reveal">
+      <img src="images/flappy-logo.png" alt="Flappy Bird">
+      <h3>Repro Flappy Bird</h3>
+      <p>Unity WebGL Build using C#</p>
+      <a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
     </div>
-  </div>
+
+    <div class="card project reveal">
+      <img src="images/dodge-logo.png" alt="Space Dodge">
+      <h3>Space Dodge</h3>
+      <p>Unity WebGL Build using C#</p>
+      <a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="card reveal">
+      <p>I am a freshman Computer Science student at The Master's University focusing on AI. I love creating interactive experiences through game design, programming, and web development. My passion lies in merging creativity with code to bring meaningful ideas to life.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card contact-info reveal">
+      <p><i class="fa-solid fa-location-dot"></i> Los Angeles, US</p>
+      <p><i class="fa-solid fa-envelope"></i> caedmon.julian@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Caedmon Julian | Built with HTML, CSS & JavaScript</p>
+  </footer>
 
   <script>
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    function setTheme(t){
-      document.body.setAttribute('data-theme', t);
-      themeToggle.textContent = t === 'dark' ? 'Light' : 'Dark';
-      themeToggle.setAttribute('aria-pressed', t === 'dark');
-    }
-    // remember theme
-    const saved = localStorage.getItem('pj-theme');
-    setTheme(saved === 'dark' ? 'dark' : 'light');
-    themeToggle.addEventListener('click', ()=>{
-      const next = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-      localStorage.setItem('pj-theme', next);
-    });
-
-    // Project modal
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalLink = document.getElementById('modalLink');
-    const closeModal = document.getElementById('closeModal');
-    const projects = document.querySelectorAll('.project');
-
-    function openModal(title,desc,link){
-      modalTitle.textContent = title;
-      modalDesc.textContent = desc;
-      modalLink.href = link || '#';
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden','false');
-      closeModal.focus();
-    }
-    function close(){
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
-    }
-    projects.forEach(p=>{
-      p.addEventListener('click', ()=>{
-        openModal(p.dataset.title,p.dataset.desc,p.dataset.link);
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
       });
-      p.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') openModal(p.dataset.title,p.dataset.desc,p.dataset.link); });
-    });
-    closeModal.addEventListener('click', close);
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
-    document.addEventListener('keydown',(e)=>{ if(e.key === 'Escape') close(); });
+    }, {threshold: 0.1});
 
-    // Contact form handler - uses mailto as a simple fallback
-    function handleSubmit(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if(!name||!email||!message){ alert('Please complete the form.'); return false; }
-      const subject = encodeURIComponent('Portfolio message from ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      // open mail client
-      window.location.href = `mailto:caedmon.julian@example.com?subject=${subject}&body=${body}`;
-      return false;
-    }
-
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        if(a.hash){ e.preventDefault(); document.querySelector(a.hash).scrollIntoView({behavior:'smooth'}); }
-      });
-    });
+    reveals.forEach(r => observer.observe(r));
   </script>
 </body>
 </html>
