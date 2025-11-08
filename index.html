@@ -1,126 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caedmon Julian | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caedmon Julian</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      scroll-behavior: smooth;
+      background: #111;
+      color: #f2f2f2;
+      font-family: Verdana, Geneva, sans-serif;
+      margin: 0;
+      line-height: 1.6;
     }
-
     header {
+      background: #000;
       position: fixed;
       width: 100%;
-      background: rgba(20, 20, 20, 0.9);
+      z-index: 10;
+      top: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      backdrop-filter: blur(6px);
-    }
-
-    header h1 {font-size: 1.5rem; font-weight: 700; letter-spacing: 1px;}
-
-    nav a {
-      color: #fff;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {color: #4da6ff;}
-
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 100px 20px 60px 20px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 3px solid #4da6ff;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .intro {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      background: url('images/background.jpg') center/cover no-repeat fixed;
+      align-items: center;
+      flex-wrap: wrap;
     }
-
-    .intro h1 {font-size: 3rem; margin-bottom: 0.5rem;}
-    .intro p {font-size: 1.2rem; color: #ccc;}
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 1.5rem auto;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    }
-
-    .project img {
-      width: 120px;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #4da6ff;
+    nav a {
+      color: #f2f2f2;
+      padding: 14px 20px;
+      display: block;
       text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background: #333;
       transition: 0.3s;
     }
-
-    .project a:hover {text-decoration: underline;}
-
-    .contact-info p {margin: 10px 0;}
-
+    main {
+      max-width: 1000px;
+      margin: 100px auto 50px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      color: #fff;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    }
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .project img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .project div {
+      flex: 1;
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact i {
+      margin-right: 8px;
+    }
     footer {
       text-align: center;
-      padding: 30px;
-      background: #111;
-      font-size: 0.9rem;
-      color: #bbb;
+      padding: 20px;
+      color: #aaa;
+      border-top: 1px solid #333;
     }
-
-    .reveal {opacity: 0; transform: translateY(30px); transition: all 0.8s ease;}
-    .reveal.active {opacity: 1; transform: translateY(0);}
-
     @media (max-width: 600px) {
-      nav a {margin-left: 0.8rem; font-size: 0.9rem;}
-      .intro h1 {font-size: 2.2rem;}
+      .project {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Caedmon Julian</h1>
     <nav>
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
@@ -129,56 +108,50 @@
     </nav>
   </header>
 
-  <section class="intro" id="home">
-    <h1>Caedmon Julian</h1>
-    <p>Computer Science Student | Developer | Creator</p>
-  </section>
+  <main>
+    <section id="home">
+      <h1>Caedmon Julian</h1>
+      <p style="text-align:center;">Computer Science Student | Game/Web Developer | Software Developer</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card project reveal">
-      <img src="images/flappy-logo.png" alt="Flappy Bird">
-      <h3>Repro Flappy Bird</h3>
-      <p>Unity WebGL Build using C#</p>
-      <a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
-    </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card project">
+        <img src="images/flappy-logo.png" alt="Flappy Bird" />
+        <div>
+          <h3>Repro Flappy Bird</h3>
+          <p>Unity WebGL Build using C#</p>
+          <a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
+        </div>
+      </div>
+      <div class="card project">
+        <img src="images/dodge-logo.png" alt="Space Dodge" />
+        <div>
+          <h3>Space Dodge</h3>
+          <p>Unity WebGL Build using C#</p>
+          <a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
+        </div>
+      </div>
+    </section>
 
-    <div class="card project reveal">
-      <img src="images/dodge-logo.png" alt="Space Dodge">
-      <h3>Space Dodge</h3>
-      <p>Unity WebGL Build using C#</p>
-      <a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. I enjoy building creative projects, from designing and programming games to developing websites and interactive apps. My passion is combining problem-solving with creativity to bring ideas to life through code.</p>
+      </div>
+    </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <div class="card reveal">
-      <p>I am a freshman Computer Science student at The Master's University focusing on AI. I love creating interactive experiences through game design, programming, and web development. My passion lies in merging creativity with code to bring meaningful ideas to life.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card contact-info reveal">
-      <p><i class="fa-solid fa-location-dot"></i> Los Angeles, US</p>
-      <p><i class="fa-solid fa-envelope"></i> caedmon.julian@gmail.com</p>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card contact">
+        <p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
+        <p><i class="fa fa-envelope"></i> caedmon.julian@gmail.com</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Caedmon Julian | Built with HTML, CSS & JavaScript</p>
+    <p>© 2025 Caedmon Julian</p>
   </footer>
-
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
-    }, {threshold: 0.1});
-
-    reveals.forEach(r => observer.observe(r));
-  </script>
 </body>
 </html>
