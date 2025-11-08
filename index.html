@@ -1,172 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caedmon Julian</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <style>
-    body {
-      background: #0b0c10;
-      color: #f2f2f2;
-      font-family: Verdana, Geneva, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #000;
-      position: fixed;
-      width: 100%;
-      z-index: 10;
-      top: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-      border-bottom: 2px solid #1f8ef1;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #f2f2f2;
-      padding: 14px 20px;
-      display: block;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background: #1f8ef1;
-      color: #fff;
-      transition: 0.3s;
-    }
-    main {
-      max-width: 1000px;
-      margin: 100px auto 50px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    h1, h2, h3 {
-      text-align: center;
-      color: #1f8ef1;
-    }
-    .card {
-      background: #1a1a1a;
-      border: 1px solid #1f8ef1;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-      border-color: #60a9f7;
-    }
-    .project {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-    }
-    .project img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      border-radius: 8px;
-      border: 2px solid #1f8ef1;
-      background: #fff;
-    }
-    .project div {
-      flex: 1;
-    }
-    a {
-      color: #1f8ef1;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #60a9f7;
-    }
-    .contact {
-      text-align: center;
-    }
-    .contact i {
-      margin-right: 8px;
-      color: #1f8ef1;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-      border-top: 1px solid #1f8ef1;
-    }
-    @media (max-width: 600px) {
-      .project {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+color: #999;
+}
+footer {
+text-align: center;
+padding: 20px;
+color: #777;
+border-top: 1px solid #333;
+background: linear-gradient(to right, #111, #1a1f2c);
+}
+@media (max-width: 600px) {
+.project {
+flex-direction: column;
+text-align: center;
+}
+#home h1 {
+font-size: 3rem;
+}
+}
+</style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+<nav>
+<a href="#home">Home</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <main>
-    <section id="home">
-      <h1>Caedmon Julian</h1>
-      <p style="text-align:center; color:#ccc;">Computer Science Student | Game/Web Developer | Software Developer</p>
-    </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="card project">
-        <img src="images/flappy-logo.png" alt="Flappy Bird" />
-        <div>
-          <h3>Repro Flappy Bird</h3>
-          <p>Unity WebGL Build using C#</p>
-          <a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
-        </div>
-      </div>
-      <div class="card project">
-        <img src="images/dodge-logo.png" alt="Space Dodge" />
-        <div>
-          <h3>Space Dodge</h3>
-          <p>Unity WebGL Build using C#</p>
-          <a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
-        </div>
-      </div>
-    </section>
+<main>
+<section id="home">
+<h1>Caedmon Julian</h1>
+<p>Computer Science Student | Game/Web Developer | Software Developer</p>
+</section>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="card">
-        <p>I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. I enjoy building creative projects, from designing and programming games to developing websites and interactive apps. My passion is combining problem-solving with creativity to bring ideas to life through code.</p>
-      </div>
-    </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card contact">
-        <p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
-        <p><i class="fa fa-envelope"></i> caedmon.julian@gmail.com</p>
-      </div>
-    </section>
-  </main>
+<section id="projects">
+<h2>Projects</h2>
+<div class="card project">
+<img src="images/flappy-logo.png" alt="Flappy Bird" />
+<div>
+<h3>Repro Flappy Bird</h3>
+<p>Unity WebGL Build using C#</p>
+<a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
+</div>
+</div>
+<div class="card project">
+<img src="images/dodge-logo.png" alt="Space Dodge" />
+<div>
+<h3>Space Dodge</h3>
+<p>Unity WebGL Build using C#</p>
+<a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
+</div>
+</div>
+</section>
 
-  <footer>
-    <p>© 2025 Caedmon Julian</p>
-  </footer>
+
+<section id="about">
+<h2>About</h2>
+<div class="card">
+<p>I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. I enjoy building creative projects, from designing and programming games to developing websites and interactive apps. My passion is combining problem-solving with creativity to bring ideas to life through code.</p>
+</div>
+</section>
+
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card contact">
+<p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
+<p><i class="fa fa-envelope"></i> caedmon.julian@gmail.com</p>
+</div>
+</section>
+</main>
+
+
+<footer>
+<p>© 2025 Caedmon Julian</p>
+</footer>
 </body>
 </html>
