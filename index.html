@@ -1,184 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caedmon Julian</title>
-  <meta name="description" content="Caedmon Julian - Computer Science student and developer. Explore my portfolio in web development, game design, and more about me.">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-  <style>
-    body {
-      background: linear-gradient(to right, #111, #1a1f2c);
-      color: #aaa;
-      font-family: Verdana, Geneva, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-    header {
-      background: linear-gradient(to right, #111, #1a1f2c);
-      position: fixed;
-      width: 100%;
-      z-index: 10;
-      top: 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-      border-bottom: 1px solid #333;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #f2f2f2;
-      padding: 14px 20px;
-      display: block;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, background 0.3s;
-    }
-    nav a:hover {
-      background: linear-gradient(to right, #2a3f5f, #1f2b45);
-      color: #ddd;
-    }
-    main {
-      max-width: 1000px;
-      margin: 100px auto 50px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    #home {
-      padding: 120px 0 120px 0;
-      text-align: center;
-    }
-    #home h1 {
-      background: linear-gradient(90deg, #00aaff, #00ffdd); /* vibrant blue → teal */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-      font-size: 4rem;
-      margin: 0;
-    }
-    #home p {
-      color: #bbb;
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
-    h2, h3 {
-      text-align: center;
-      background: linear-gradient(to right, #eee, #dde);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .card {
-      background: linear-gradient(160deg, #1a1a1a, #222428);
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      transition: transform 0.2s, box-shadow 0.2s border-color 0.3s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.6), 0 0 15px #2a3f5f;
-      border-color: #2a3f5f;
-    }
-    .project {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-    }
-    .project img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      border-radius: 8px;
-      border: 1px solid #444;
-      background: #fff;
-    }
-    .project div {
-      flex: 1;
-    }
-    a {
-      color: #aaa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #ccc;
-    }
-    .contact {
-      flex-direction: column;
-      align-items: center;    
-      text-align: center;
-    }
-    .contact i {
-      margin-right: 8px;
-      color: #999;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      border-top: 1px solid #333;
-      background: linear-gradient(to right, #111, #1a1f2c);
-    }
-    @media (max-width: 600px) {
-      .project {
-        flex-direction: column;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caedmon Julian</title>
+    <meta name="description" content="Caedmon Julian - Computer Science student and developer. Explore my portfolio in web development, game design, and more about me.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <style>
+      body {
+        background: linear-gradient(to right, #111, #1a1f2c);
+        color: #aaa;
+        font-family: Verdana, Geneva, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      header {
+        background: linear-gradient(to right, #111, #1a1f2c);
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        top: 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        border-bottom: 1px solid #333;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: #f2f2f2;
+        padding: 14px 20px;
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s, background 0.3s;
+      }
+      nav a:hover {
+        background: linear-gradient(to right, #2a3f5f, #1f2b45);
+        color: #ddd;
+      }
+      main {
+        max-width: 1000px;
+        margin: 100px auto 50px auto;
+        padding: 0 20px;
+      }
+      section {
+        margin-bottom: 60px;
+      }
+      #home {
+        padding: 120px 0 120px 0;
         text-align: center;
       }
       #home h1 {
-        font-size: 3rem;
+        background: linear-gradient(90deg, #00aaff, #00ffdd); /* vibrant blue → teal */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        font-size: 4rem;
+        margin: 0;
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="home">
-      <h1>Caedmon Julian</h1>
-      <p>Computer Science Student | Game/Web Developer | Software Developer</p>
-    </section>
-    
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card contact">
-        <p>
-          📍 <a href="https://www.google.com/maps/search/?api=1&query=Los+Angeles" target="_blank" rel="noopener noreferrer">Los Angeles, CA</a><br>
-          ✉️ <a href="mailto:caedmon.julian@gmail.com">caedmon.julian@gmail.com</a><br>
-          🔗 <a href="https://www.linkedin.com/in/caedmonjulian" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-          📸 <a href="https://www.instagram.com/caedmonjulian" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      © 2025 Caedmon Julian. All rights reserved.<br>
-      Hosted using Github Pages
-    </p>
-  </footer>
-</body>
+      #home p {
+        color: #bbb;
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+      h2, h3 {
+        text-align: center;
+        background: linear-gradient(to right, #eee, #dde);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card {
+        background: linear-gradient(160deg, #1a1a1a, #222428);
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: transform 0.2s, box-shadow 0.2s border-color 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.6), 0 0 15px #2a3f5f;
+        border-color: #2a3f5f;
+      }
+      .project {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+      .project img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #fff;
+      }
+      .project div {
+        flex: 1;
+      }
+      a {
+        color: #aaa;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #ccc;
+      }
+      .contact {
+        flex-direction: column;
+        align-items: center;    
+        text-align: center;
+      }
+      .contact i {
+        margin-right: 8px;
+        color: #999;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        border-top: 1px solid #333;
+        background: linear-gradient(to right, #111, #1a1f2c);
+      }
+      @media (max-width: 600px) {
+        .project {
+          flex-direction: column;
+          text-align: center;
+        }
+        #home h1 {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+  
+    <main>
+      <section id="home">
+        <h1>Caedmon Julian</h1>
+        <p>Computer Science Student | Game/Web Developer | Software Developer</p>
+      </section>
+    </main>
+  
+    <footer>
+      <p>
+        © 2025 Caedmon Julian. All rights reserved.<br>
+        Hosted using Github Pages
+      </p>
+    </footer>
+  </body>
 </html>
