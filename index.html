@@ -123,10 +123,14 @@
         align-items: center;    
         text-align: center;
       }
-      .contact i {
-        margin-right: 8px;
-        color: #999;
-      }
+      .home-cards {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin: 40px auto;
+        max-width: 800px;
       footer {
         text-align: center;
         padding: 20px;
@@ -161,6 +165,22 @@
         <p>Computer Science Student | Game/Web Developer | Software Developer</p>
       </section>
     </main>
+
+    <section class="home-cards">
+      <a href="projects.html" class="card-link">
+        <div class="card">
+          <h2>💻 Projects</h2>
+          <p>Explore my web and game development work.</p>
+        </div>
+      </a>
+    
+      <a href="about.html" class="card-link">
+        <div class="card">
+          <h2>👤 About Me</h2>
+          <p>Learn more about my background and interests.</p>
+        </div>
+      </a>
+    </section>
   
     <footer>
       <p>
