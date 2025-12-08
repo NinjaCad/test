@@ -294,7 +294,7 @@
         </div>
       </section>
 
-      <section id="contact" class="fade-up">
+      <section id="contact" class="fade-up" style="margin-top:18px">
         <div class="card">
           <h2>Contact</h2>
           <p style="color:var(--muted)">Interested in working together? Send a note — I typically reply within 2 business days.</p>
@@ -306,7 +306,7 @@
             <textarea id="message" placeholder="How can I help?" required></textarea>
             <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
               <button class="button primary" type="submit">Send message</button>
-              <div style="color:var(--muted);font-size:13px">Or email: <a href="mailto:you@domain.com">caedmonjulian@gmail.com</a></div>
+              <div style="color:var(--muted);font-size:13px">Or email: <a href="mailto:caedmonjulian@gmail.com">caedmonjulian@gmail.com</a></div>
             </div>
           </form>
 
@@ -334,7 +334,7 @@
 
       // fallback: open user's email client with prefilled content
       const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-      const mailto = `mailto:you@domain.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      const mailto = `mailto:caedmonjulian@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
       window.location.href = mailto;
     }
 
