@@ -34,6 +34,15 @@
       display:flex;justify-content:center;
     }
 
+    a {
+      color: #00d2ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
     .wrap{width:100%;max-width:var(--max)}
 
     /* Navbar */
@@ -41,7 +50,7 @@
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:grid;place-items:center;color:#04263a;font-weight:800}
     nav{display:flex;gap:18px;align-items:center}
-    nav a{color:var(--accent);text-decoration:none;font-weight:600}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
     .cta{background:linear-gradient(90deg,var(--accent),#60a5fa);padding:10px 14px;border-radius:10px;color:#04263a;font-weight:700;text-decoration:none}
 
     /* Hero */
@@ -325,7 +334,7 @@
     <footer>
       <div class="footer">
         <div>© <span id="year"></span> Caedmon Julian. All rights reserved.</div>
-        <div style="color:var(--muted)">Built with Github Pages</div>
+        <div style="color:var(--muted)">Built with <a href="https://www.github.com/NinjaCad/portfolio" target="_blank">Github Pages</a></div>
       </div>
     </footer>
 
