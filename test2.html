@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caedmon Julian — Portfolio</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills and contact information." />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#00d2ff;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071028 0%, var(--bg) 100%);
+      color:#e6eef6;
+      line-height:1.45;
+      padding:32px 18px;
+      display:flex;
+      justify-content:center;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{width:100%;max-width:var(--max)}
+
+    /* Navbar */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .brand{display:flex;gap:12px;align-items:center}
+
+    .logo{
+      width:44px;height:44px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#60a5fa);
+      display:grid;place-items:center;
+      color:#04263a;font-weight:800;
+    }
+
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+
+    nav a{
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .cta{
+      background:linear-gradient(90deg,var(--accent),#60a5fa);
+      padding:10px 14px;
+      border-radius:10px;
+      color:#04263a;
+      font-weight:700;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:36px;
+    }
+
+    .hero h1{
+      font-size:clamp(30px,5vw,44px);
+      margin:0 0 10px;
+    }
+
+    .hero p{color:var(--muted)}
+
+    .actions{display:flex;gap:12px;margin-top:16px}
+
+    .button{
+      padding:11px 14px;
+      border-radius:10px;
+      font-weight:700;
+    }
+
+    .primary{background:var(--accent);color:#052025}
+    .ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Cards */
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      border:0.1px solid #222;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+
+    /* Me card */
+    .me-card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      border-radius:16px;
+      padding:18px;
+      backdrop-filter:blur(6px);
+      border:0.1px solid #222;
+    }
+
+    .avatar{
+      height:240px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .avatar img{
+      width:100%;
+      max-width:200px;
+      border-radius:12px;
+    }
+
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+
+    .chip{
+      background:var(--glass);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* Projects */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .project{
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      border:0.1px solid #222;
+      transition:.3s;
+    }
+
+    .project:hover{
+      transform:translateY(-5px);
+      border:1px solid var(--accent);
+      box-shadow:0 0 12px #00d2ff60;
+    }
+
+    .tag{
+      font-size:12px;
+      background:rgba(255,255,255,0.03);
+      padding:6px 8px;
+      border-radius:8px;
+      color:var(--muted);
+    }
+
+    /* Certificates */
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .cert-card{
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      text-align:center;
+      font-weight:600;
+      border:0.1px solid #222;
+      transition:.25s ease;
+    }
+
+    .cert-card:hover{
+      transform:translateY(-4px);
+      border:1px solid var(--accent);
+      box-shadow:0 0 12px #00d2ff60;
+    }
+
+    /* Skills */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .skill-bar{
+      background:rgba(255,255,255,0.03);
+      height:10px;
+      border-radius:999px;
+      overflow:hidden;
+      margin-top:10px;
+    }
+
+    .skill-bar i{
+      display:block;
+      height:100%;
+      background:linear-gradient(90deg,var(--accent),#60a5fa);
+    }
+
+    /* Footer */
+    .footer{
+      margin-top:36px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    /* Animations */
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeInUp .6s forwards}
+    @keyframes fadeInUp{to{opacity:1;transform:none}}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media(max-width:640px){
+      .projects-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="fade-up">
+  <div class="brand">
+    <div class="logo">CJ</div>
+    <div>
+      <strong>Caedmon Julian</strong>
+      <div style="font-size:13px;color:var(--muted)">Computer Science Student</div>
+    </div>
+  </div>
+
+  <nav>
+    <a onclick="projects.scrollIntoView({behavior:'smooth'})">Projects</a>
+    <a onclick="certificates.scrollIntoView({behavior:'smooth'})">Certificates</a>
+    <a onclick="skills.scrollIntoView({behavior:'smooth'})">Skills</a>
+    <a onclick="contact.scrollIntoView({behavior:'smooth'})" class="cta">Contact</a>
+  </nav>
+</header>
+
+<section class="hero fade-up">
+  <div>
+    <h1>Hello, I’m <span style="background:linear-gradient(90deg,var(--accent),#3a7bd5);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Caedmon</span></h1>
+    <p>I build websites, games, and creative software with a focus on clean design and solid logic.</p>
+
+    <div class="actions">
+      <a class="button primary" onclick="projects.scrollIntoView({behavior:'smooth'})">View Work</a>
+      <a class="button ghost" onclick="contact.scrollIntoView({behavior:'smooth'})">Get in Touch</a>
+    </div>
+
+    <div class="chips">
+      <div class="chip">Web</div>
+      <div class="chip">Unity</div>
+      <div class="chip">AI</div>
+    </div>
+  </div>
+
+  <aside class="me-card">
+    <div class="avatar">
+      <img src="images/portrait.jpeg" alt="portrait">
+    </div>
+    <div class="chips">
+      <div class="chip">C#</div>
+      <div class="chip">Python</div>
+      <div class="chip">HTML/CSS</div>
+      <div class="chip">JavaScript</div>
+    </div>
+  </aside>
+</section>
+
+<section id="projects" class="fade-up">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project">
+      <h3>Sprite Flight</h3>
+      <p class="tag">Unity · C# · WebGL</p>
+    </div>
+    <div class="project">
+      <h3>Space Dodge</h3>
+      <p class="tag">Unity · C# · WebGL</p>
+    </div>
+    <div class="project">
+      <h3>Time Puzzle</h3>
+      <p class="tag">Unity · C#</p>
+    </div>
+  </div>
+</section>
+
+<section id="certificates" class="fade-up" style="margin-top:36px">
+  <h2>Certificates</h2>
+  <div class="cert-grid">
+    <a href="#" class="cert-card">Python Fundamentals</a>
+    <a href="#" class="cert-card">C# Programming</a>
+    <a href="#" class="cert-card">Web Development</a>
+    <a href="#" class="cert-card">Algorithms & Data Structures</a>
+    <a href="#" class="cert-card">Unity Game Development</a>
+    <a href="#" class="cert-card">Intro to AI</a>
+  </div>
+</section>
+
+<section id="skills" class="fade-up" style="margin-top:36px">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="card">
+      <strong>Frontend</strong>
+      <div class="skill-bar"><i style="width:88%"></i></div>
+    </div>
+    <div class="card">
+      <strong>Backend</strong>
+      <div class="skill-bar"><i style="width:82%"></i></div>
+    </div>
+    <div class="card">
+      <strong>Platforms</strong>
+      <div class="skill-bar"><i style="width:70%"></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="fade-up" style="margin-top:36px">
+  <div class="card">
+    <h2>Contact</h2>
+    <p style="color:var(--muted)">Email: <a href="mailto:caedmon.julian@gmail.com">caedmon.julian@gmail.com</a></p>
+  </div>
+</section>
+
+<footer class="footer fade-up">
+  <div>© <span id="year"></span> Caedmon Julian</div>
+  <div>Built with GitHub Pages</div>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".fade-up").forEach((el,i)=>{
+    el.style.animationDelay = (i*80)+"ms";
+  });
+</script>
+
+</body>
+</html>
